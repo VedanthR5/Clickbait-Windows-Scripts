@@ -3,6 +3,12 @@ echo Checking if script contains Administrative rights...
 net sessions
 if %errorlevel%==0 (
 echo Success!
+timeout /t 5
+echo.
+echo Welcome to the Windows 10 Preliminary Cyberpatriot Script for Team Clickbait
+echo.
+timeout /t 2
+echo.
 ) else (
 echo No admin, please run with Administrative rights...
 pause
@@ -351,7 +357,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnec
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 0 /f
 goto MENU
 :Six
-REM Windows auomatic updates
+REM Windows automatic updates
 echo "ENABLING AUTO-UPDATES"
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update" /v AUOptions /t REG_DWORD /d 3 /f
 goto MENU
