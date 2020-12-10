@@ -1,4 +1,4 @@
-# CyberPatriotScripts
+# Windows CyberPatriotScripts
 
 https://www.uscyberpatriot.org/competition/training-materials/practice-images (Practice images)
 
