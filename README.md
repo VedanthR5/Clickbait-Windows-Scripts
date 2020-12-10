@@ -5,8 +5,7 @@ https://www.uscyberpatriot.org/competition/training-materials/practice-images (P
 THIS IS ONLY FOR USE OF TEAM CLICKBAIT OF LASA HIGH SCHOOL
 
 # Features
-Auto-securing for Linux and Windows. A command compliation is in the folder for Cisco.
-
+Auto-securing for Windows
 Complied Windows batch file to make everything a bit easier. (Will ask for ADMIN on launch)
 
 # Windows
