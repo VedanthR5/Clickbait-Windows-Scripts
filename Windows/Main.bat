@@ -1,4 +1,8 @@
 @echo off
+echo Make sure to run this script in Admin Mode!
+timeout /t 5
+echo.
+echo Welcome to the Main Windows 10 Script for Team Clickbait
 set functions=checkFiles firewall lsp audit usrRights services winFeatures registry checkUsr misc netShare flushDNS defAccounts passwords rdp installMalwarebytes installAVG installMBAnti installMBSA installRevo installSUPER lockdown tools verifySys
 ::Get current running directory
 set path=%~dp0
@@ -56,8 +60,8 @@ goto:EOF
 
 :lsp
 echo Setting password policy...
-::Set account lockout to 5, min length to 8, max age to 30, min age to 1, and history to 5
-net accounts /lockoutthreshold:5 /MINPWLEN:8 /MAXPWAGE:30 /MINPWAGE:1 /UNIQUEPW:5 
+::Set account lockout to 5, account lockout threshold to 3,lockout counter to 15,length to 14, max age to 30, min age to 1, and history to 24
+net accounts /lockoutthreshold:5 /lockoutduration:30/lockoutwindow:15/ MINPWLEN:14 /MAXPWAGE:30 /MINPWAGE:5 /UNIQUEPW:24 /
 echo Set password policy: Password policy must meet complexity to enable
 echo Set password policy: Store passwords using reversible encryption to disabled
 echo Secpol.msc will be started for manual process
@@ -306,10 +310,10 @@ echo Renamed Administrator to "Dude" and Guest to "LameDude"
 goto:EOF
 
 :passwords
-echo Making passwords expire, and setting password to: CyberPatriot1 IMPORTANT
+echo Making passwords expire, and setting password to: T3@m_C7Ickb@it IMPORTANT
 echo Please change the main account password after script
 for /f "tokens=*" %%a in ('type %path%resources\users.txt') do (
-	net user "%%a" "CyberPatriot1"
+	net user "%%a" "T3@m_C7Ickb@it"
 	C:\Windows\System32\wbem\wmic UserAccount where Name="%%a" set PasswordExpires=True
 )
 echo Made passwords expire, and set passwords
